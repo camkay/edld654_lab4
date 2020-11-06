@@ -1,0 +1,24 @@
+---
+title: "lab4_modelfits"
+author: "Gluck, Kay, and Miller"
+date: "11/6/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# load libraries
+library(tidymodels)
+```
+
+# Model fit 1: AUC
+```{r}
+knn1_fit <- readRDS("models/knn1_fit.Rds")
+
+knn1_fit %>%
+  collect_metrics() %>%
+  filter(.metric == "roc_auc")
+```
+
+
