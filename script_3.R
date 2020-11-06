@@ -29,6 +29,7 @@ knn2_final_res <- last_fit(
   preprocessor = knn2_rec_final, 
   split        = split)
 
+saveRDS(knn2_final_res, "models/knn2_final_fit.Rds")
 
 
 
