@@ -11,8 +11,8 @@ clusterEvalQ(cl, {library(tidymodels)})
 
 full_train <- read_csv("data/train.csv")
 
-full_train <- full_train %>%
-  slice_sample(prop = .005)
+# full_train <- full_train %>%
+#   slice_sample(prop = .005)
 
 split    <- initial_split(full_train)
 train    <- training(split)
