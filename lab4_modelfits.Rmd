@@ -2,7 +2,12 @@
 title: "lab4_modelfits"
 author: "Gluck, Kay, and Miller"
 date: "11/6/2020"
-output: html_document
+output:
+  html_document:
+    theme: spacelab
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -28,5 +33,14 @@ knn2_fit <- readRDS("models/knn2_fit.Rds")
 
 knn2_fit %>%
   show_best(metric = "roc_auc", n = 5)
+```
+
+# Model fit 3:
+
+```{r}
+knn2_final_fit <- readRDS("models/knn2_final_fit.Rds")
+
+knn2_final_fit %>%
+  collect_metrics()
 ```
 
