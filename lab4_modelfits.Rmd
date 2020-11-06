@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidymodels)
 ```
 
-# Model fit 1: AUC
+# Model fit 1:
 ```{r}
 knn1_fit <- readRDS("models/knn1_fit.Rds")
 
@@ -21,4 +21,12 @@ knn1_fit %>%
   filter(.metric == "roc_auc")
 ```
 
+# Model fit 2:
+
+```{r}
+knn2_fit <- readRDS("models/knn2_fit.Rds")
+
+knn2_fit %>%
+  show_best(metric = "roc_auc", n = 5)
+```
 
